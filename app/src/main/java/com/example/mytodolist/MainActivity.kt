@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             recycler.adapter = adapter;
         } }
 
-
+        //To Do
         todoList.add(Todo(
             "Title", "Desc", true
         ))
