@@ -1,17 +1,26 @@
 package com.example.mytodolist
 
-import java.sql.Date
+import kotlin.text.isNotEmpty
 
 class Todo {
-    var Title : String = "";
-    var Description : String = "";
-    var Status : Boolean = false;
-    var Datum : String = "";
+    var todoID: Int = 0
+        get () = field
+        set (value){ if (value >= 0) field = value; }
+    var todoTitle: String = ""
+        get () = field
+        set (value){ if (value.isNotEmpty()) field = value; }
+    var todoDescription: String =
+        ""
+        get () = field
+        set (value){ if (value.isNotEmpty()) field = value; }
+    var todoStatus: Boolean = false;
 
-    constructor(Title: String, Description:String, Status : Boolean)
+    constructor() {}
+    constructor(ID: Int, Title: String, Description: String, Status: Boolean)
     {
-        this.Title = Title;
-        this.Description = Description;
-        this.Status = Status;
+        this.todoID = ID;
+        this.todoTitle = Title;
+        this.todoDescription = Description;
+        this.todoStatus = Status;
     }
 }

@@ -1,51 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/cardId"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="105dp">
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="@android:color/white">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="347dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="20px"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20px"
-        android:layout_marginEnd="20px"
-        android:layout_marginRight="56dp"
-        android:layout_marginBottom="20px"
-        android:gravity="center"
-        android:text="Title"
-        android:textAlignment="viewStart"
-        android:textSize="30dp" />
-
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="348dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="55dp"
-        android:text="Description" />
-
+    <!-- Checkbox -->
     <CheckBox
         android:id="@+id/cbCheck"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="1dp" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toEndOf="@id/cbCheck"
+        app:layout_constraintEnd_toStartOf="@id/btnEdit"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        app:layout_constraintStart_toStartOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Edit Button -->
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="✎"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Delete Button -->
     <Button
         android:id="@+id/btnDelete"
-        android:layout_width="72dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:text="-" />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:text="✕"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEdit" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
